@@ -1,0 +1,8 @@
+{
+  "admin-example.navigation.label-group": "Eshopper",
+  "admin-example.navigation.label-table": "Report",
+  "admin-example.navigation.search.kws": "test, mock, fake",
+  "admin-example.navigation.details.search.kws": "details, mock, test, hello",
+  "admin-example.navigation.table.search.kws": "table, mock, test, bye",
+  "admin-example.hello-world": "Eshopper"
+}

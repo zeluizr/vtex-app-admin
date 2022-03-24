@@ -1,0 +1,13 @@
+{
+  "section": "customer",
+  "titleId": "admin-example.navigation.label-group",
+  "subSection": "eshopper",
+  "searchKeyWordsHelpers": "admin-example.navigation.search.kws",
+  "subSectionItems": [
+    {
+      "labelId": "admin-example.navigation.label-table",
+      "path": "/admin/eshopper",
+      "searchKeyWordsHelpers": "admin-example.navigation.table.search.kws"
+    }
+  ]
+}
