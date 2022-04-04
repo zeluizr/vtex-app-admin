@@ -47,6 +47,13 @@
         "host": "licensemanager.vtex.com.br",
         "path": "/api/pvt/accounts/*"
       }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
     }
   ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

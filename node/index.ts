@@ -1,6 +1,7 @@
 import type { ClientsConfig, RecorderState, ServiceContext } from '@vtex/api'
 import { LRUCache, method, Service } from '@vtex/api'
 import { Clients } from './clients'
+import { accountClientMiddleware } from './middlewares/accountclient'
 import { eshopperMiddleware } from './middlewares/eshopper'
 
 
@@ -45,6 +46,9 @@ export default new Service({
   routes: {
     eshopper: method({
       GET: eshopperMiddleware,
+    }),
+    accountclient: method({
+      GET: accountClientMiddleware,
     })
   },
 })

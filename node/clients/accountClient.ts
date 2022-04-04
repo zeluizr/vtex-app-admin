@@ -1,17 +1,35 @@
-import { JanusClient } from '@vtex/api'
+import { InstanceOptions, IOClient, IOContext } from '@vtex/api'
 
-const BASE_URL = '/api/license-manager'
-
-const routes = {
-  accountData: `${BASE_URL}/account`,
-}
-
-export default class AccountClient extends JanusClient {
-  public getAccountClient () {
-    return this.http.get(routes.accountData, {
-      headers: {
-        VtexIdclientAutCookie: this.context.authToken,
+const withAuthToken =
+  (options: InstanceOptions | undefined) =>
+    ({ adminUserAuthToken, authToken }: IOContext) => {
+      return {
+        ...options?.headers,
+        ...(adminUserAuthToken
+          ? {
+            Authorization: adminUserAuthToken,
+            VtexIdclientAutCookie: adminUserAuthToken,
+          }
+          : { VtexIdclientAutCookie: authToken }),
+        'Proxy-Authorization': authToken,
+        'X-Vtex-Use-Https': 'true',
+        cookie: `_ssid=${adminUserAuthToken}`,
       }
+    }
+
+export class GetClientAccountHost extends IOClient {
+
+  private VLM_BASE_URL: string
+
+  public constructor(private ctx: IOContext, options?: InstanceOptions) {
+    super(ctx, {
+      ...options,
+      headers: withAuthToken(options)(ctx),
     })
+    this.VLM_BASE_URL = `http://${this.ctx.account}.vtexcommercestable.com.br/api/vlm/account`
+  }
+
+  public async getStores() {
+    return this.http.get(this.VLM_BASE_URL)
   }
 }

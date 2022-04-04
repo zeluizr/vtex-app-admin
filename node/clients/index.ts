@@ -1,7 +1,6 @@
 import { IOClients } from '@vtex/api'
-import accountClient from './accountClient'
-import Eshopper from './eshopper'
-
+import { GetClientAccountHost } from './accountClient'
+import { Eshopper } from './eshopper'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -9,7 +8,7 @@ export class Clients extends IOClients {
     return this.getOrSet('eshopper', Eshopper)
   }
   public get accountclient() {
-    return this.getOrSet('accountclient', accountClient)
+    return this.getOrSet('accountclient', GetClientAccountHost)
   }
 
 }

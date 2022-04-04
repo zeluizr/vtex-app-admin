@@ -1,7 +1,7 @@
 import type { InstanceOptions, IOContext } from '@vtex/api'
 import { ExternalClient } from '@vtex/api'
 
-export default class Eshopper extends ExternalClient {
+export class Eshopper extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
     super('https://eshopper-global-app.vercel.app', context, options)
   }
