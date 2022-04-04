@@ -9,19 +9,12 @@ const TITLE = "Eshopper Score Rankings";
 const SUBTITLE =
   "The Eshopper score is an all-in-one metric built from expert analysis of a site's usability and shopper friendliness. It's built from 8 components: SEO, Navigation, Content & Customization, Web Performance, Purchase Policy, Cart & Checkout, Omnichannel y Customer Service";
 
-// type SiteInfoType = {
-//   title?: string;
-//   vertical?: string;
-// };
-
 export default function EshopperApp() {
   const [loading, setLoading] = useState<boolean>(true);
   const [siteInfo, setSiteInfo] = useState<any>();
 
   useEffect(() => {
     (async () => {
-
-
       const account = await fetch(
         "/_v/clienteaccount"
       ).then(res => res.json());
@@ -39,7 +32,6 @@ export default function EshopperApp() {
       const { data } = result;
       const [cliente] = data;
 
-
       setSiteInfo(cliente)
       setLoading(false);
     })();
@@ -52,26 +44,30 @@ export default function EshopperApp() {
       {loading ? (
         <Progress type="steps" steps={["inProgress"]} />
       ) : (
-        <section className="justify-between flex">
-          <div className="bg-black-90 br2 pa5 flex w-40 mr5 h-auto">
-            <img src={siteInfo?.lighthouse?.screenshot} alt={siteInfo?.name} />
-          </div>
-          <div style={{
-            display: "flex",
-            backgroundColor: "#FFF",
-            borderRadius: "5px",
-            flexDirection: "column",
-            height: "100%",
-            paddingBottom: "20px"
-          }} className="pa5">
-            <h2 className="ma0">{siteInfo?.name}</h2>
-            <p style={{
-              flex: "1",
-            }}>{siteInfo?.description}</p>
-            <span><b>Category:</b> {siteInfo?.vertical}</span>
-            <span><b>Plattform:</b> {siteInfo?.plattform}</span>
-          </div>
-        </section>
+        <>
+          {siteInfo && (
+            <section className="justify-between flex">
+              <div className="bg-black-90 br2 pa5 flex w-40 mr5 h-auto">
+                <img src={siteInfo?.lighthouse?.screenshot} alt={siteInfo?.name} />
+              </div>
+              <div style={{
+                display: "flex",
+                backgroundColor: "#FFF",
+                borderRadius: "5px",
+                flexDirection: "column",
+                height: "100%",
+                paddingBottom: "20px"
+              }} className="pa5">
+                <h2 className="ma0">{siteInfo?.name}</h2>
+                <p style={{
+                  flex: "1",
+                }}>{siteInfo?.description}</p>
+                <span><b>Category:</b> {siteInfo?.vertical}</span>
+                <span><b>Plattform:</b> {siteInfo?.plattform}</span>
+              </div>
+            </section>
+          )}
+        </>
       )}
     </Layout>
   );

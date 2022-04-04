@@ -45,10 +45,10 @@ export default new Service({
   clients,
   routes: {
     eshopper: method({
-      GET: eshopperMiddleware,
+      GET: [eshopperMiddleware],
     }),
     accountclient: method({
-      GET: accountClientMiddleware,
+      GET: [accountClientMiddleware],
     })
   },
 })
