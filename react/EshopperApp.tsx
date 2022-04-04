@@ -1,83 +1,72 @@
 import React, { useEffect, useState } from "react";
 import {
-  Box,
   Layout,
   PageHeader,
-  Progress,
-  Tag,
-  Totalizer
+  Progress
 } from "vtex.styleguide";
 
 const TITLE = "Eshopper Score Rankings";
 const SUBTITLE =
   "The Eshopper score is an all-in-one metric built from expert analysis of a site's usability and shopper friendliness. It's built from 8 components: SEO, Navigation, Content & Customization, Web Performance, Purchase Policy, Cart & Checkout, Omnichannel y Customer Service";
 
-type SiteInfoType = {
-  title?: string;
-  vertical?: string;
-};
+// type SiteInfoType = {
+//   title?: string;
+//   vertical?: string;
+// };
 
 export default function EshopperApp() {
-  const [loading, setLoading] = useState(true);
-  const [siteInfo, setSiteInfo] = useState<SiteInfoType>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [siteInfo, setSiteInfo] = useState<any>();
 
   useEffect(() => {
     (async () => {
-      const { Results } = await fetch(
-        "https://api.builtwith.com/v19/api.json?KEY=2a15b1b8-cc56-4637-8d0e-a230095acb79&LOOKUP=fravega.com"
+      const result = await fetch(
+        "/_v/cliente/centauro.com.br"
       ).then(res => res.json());
 
-      setSiteInfo({
-        title: Results[0]?.Meta?.CompanyName,
-        vertical: Results[0]?.Meta?.Vertical
-      });
+      const account = await fetch(
+        "/_v/clienteaccount"
+      ).then(res => res.json());
 
+      const { data } = result;
+      const { data: accountData } = account;
+      const [cliente] = data;
+
+      console.log(accountData)
+
+      setSiteInfo(cliente)
       setLoading(false);
     })();
-  });
+  }, []);
+
+
 
   return (
     <Layout pageHeader={<PageHeader title={TITLE} subtitle={SUBTITLE} />}>
-      <Box>
-        {loading ? (
-          <Progress type="steps" steps={["inProgress"]} />
-        ) : (
-          <div>
-            <section className="justify-between flex items-center">
-              <h2>{siteInfo?.title}</h2>
-              <Tag>Category: {siteInfo?.vertical}</Tag>
-            </section>
-            <section>
-              <Totalizer
-                items={[
-                  {
-                    inverted: true,
-                    value: "Total Orders",
-                    label: "Until 10h10"
-                  },
-                  {
-                    label: "Today",
-                    value: 12364
-                  },
-                  {
-                    label: "Yesterday",
-                    value: 11980
-                  },
-
-                  {
-                    label: "Last Week",
-                    value: 10776
-                  },
-                  {
-                    label: "Last Year",
-                    value: 9802
-                  }
-                ]}
-              />
-            </section>
+      {loading ? (
+        <Progress type="steps" steps={["inProgress"]} />
+      ) : (
+        <section className="justify-between flex">
+          <div className="bg-black-90 br2 pa5 flex w-40 mr5 h-auto">
+            <img src={siteInfo?.lighthouse?.screenshot} alt={siteInfo?.name} />
           </div>
-        )}
-      </Box>
+          <div style={{
+            display: "flex",
+            backgroundColor: "#FFF",
+            borderRadius: "5px",
+            flexDirection: "column",
+            height: "100%",
+            paddingBottom: "20px"
+          }} className="pa5">
+            <h2 className="ma0">{siteInfo?.name}</h2>
+            <p style={{
+              flex: "1",
+            }}>{siteInfo?.description}</p>
+            <span><b>Category:</b> {siteInfo?.vertical}</span>
+            <span><b>Plattform:</b> {siteInfo?.plattform}</span>
+          </div>
+        </section>
+      )}
     </Layout>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "memory": 256,
+  "ttl": 10,
+  "timeout": 2,
+  "minReplicas": 2,
+  "maxReplicas": 4,
+  "workers": 1,
+  "routes": {
+    "eshopper": {
+      "path": "/_v/cliente/:url",
+      "public": true
+    },
+    "accountclient": {
+      "path": "/_v/clienteaccount",
+      "public": true
+    }
+  }
+}
