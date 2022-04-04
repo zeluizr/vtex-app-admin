@@ -29,7 +29,7 @@ export class GetClientAccountHost extends IOClient {
     this.VLM_BASE_URL = `http://${this.ctx.account}.vtexcommercestable.com.br/api/vlm/account`
   }
 
-  public async getStores() {
+  public async getAccount() {
     return this.http.get(this.VLM_BASE_URL)
   }
 }

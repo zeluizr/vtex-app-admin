@@ -5,7 +5,7 @@ export async function accountClientMiddleware(
   const { clients } = context
 
   context.status = 200
-  context.body = await clients.accountclient.getStores()
+  context.body = await clients.accountclient.getAccount()
   context.set('cache-control', 'no-cache')
 
   await next()
