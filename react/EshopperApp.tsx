@@ -9,6 +9,13 @@ const TITLE = "Eshopper Score Rankings";
 const SUBTITLE =
   "The Eshopper score is an all-in-one metric built from expert analysis of a site's usability and shopper friendliness. It's built from 8 components: SEO, Navigation, Content & Customization, Web Performance, Purchase Policy, Cart & Checkout, Omnichannel y Customer Service";
 
+const formatUrl = (host: string) => {
+  return host.replace(
+    /(https:\/\/www\.)|(https:\/\/)|(http:\/\/)|(http:\/\/www\.)|(www\.)/gi,
+    ""
+  );
+}
+
 export default function EshopperApp() {
   const [loading, setLoading] = useState<boolean>(true);
   const [siteInfo, setSiteInfo] = useState<any>();
@@ -20,12 +27,12 @@ export default function EshopperApp() {
       ).then(res => res.json());
       const { hosts } = account;
 
-      let [host] = hosts;
+      const [host] = hosts;
 
-      host = host.replace("www.", "");
+
 
       const result = await fetch(
-        `/_v/cliente/${host}`
+        `/_v/cliente/${formatUrl(host)}`
       ).then(res => res.json());
 
 
