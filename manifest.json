@@ -25,33 +25,9 @@
       "name": "POWER_USER_DS"
     },
     {
-      "name": "Get_Account_By_Identifier"
-    },
-    {
       "name": "outbound-access",
       "attrs": {
         "host": "eshopper-global-app.vercel.app",
-        "path": "/api/*"
-      }
-    },
-    {
-      "name": "outbound-access",
-      "attrs": {
-        "host": "{{account}}.vtexcommercestable.com.br",
-        "path": "/api/license-manager/*"
-      }
-    },
-    {
-      "name": "outbound-access",
-      "attrs": {
-        "host": "licensemanager.vtex.com.br",
-        "path": "/api/pvt/accounts/*"
-      }
-    },
-    {
-      "name": "outbound-access",
-      "attrs": {
-        "host": "portal.vtexcommercestable.com.br",
         "path": "/api/*"
       }
     }
