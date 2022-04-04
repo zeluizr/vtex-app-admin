@@ -20,19 +20,25 @@ export default function EshopperApp() {
 
   useEffect(() => {
     (async () => {
-      const result = await fetch(
-        "/_v/cliente/centauro.com.br"
-      ).then(res => res.json());
+
 
       const account = await fetch(
         "/_v/clienteaccount"
       ).then(res => res.json());
+      const { hosts } = account;
+
+      let [host] = hosts;
+
+      host = host.replace("www.", "");
+
+      const result = await fetch(
+        `/_v/cliente/${host}`
+      ).then(res => res.json());
+
 
       const { data } = result;
-      const { data: accountData } = account;
       const [cliente] = data;
 
-      console.log(accountData)
 
       setSiteInfo(cliente)
       setLoading(false);
