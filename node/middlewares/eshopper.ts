@@ -1,14 +1,11 @@
 export async function eshopperMiddleware(
-  context: Context,
-  next: () => Promise<unknown>
+  ctx: Context, next: () => Promise<any>
 ) {
-  const { clients, request } = context
+  const { state: { url }, clients } = ctx
 
-  console.log("Context Base: ", request)
-
-  context.status = 200
-  context.body = await clients.eshopper.getEshopper('centauro.com.br')
-  context.set('cache-control', 'no-cache')
+  ctx.status = 200
+  ctx.body = await clients.eshopper.getEshopper(url)
+  ctx.set('cache-control', 'no-cache')
 
   await next()
 }
