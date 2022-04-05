@@ -37,7 +37,7 @@ export default function EshopperApp() {
 
 
       const { data } = result;
-      const [cliente] = data;
+      const [cliente] = data || [];
 
       setSiteInfo(cliente)
       setLoading(false);

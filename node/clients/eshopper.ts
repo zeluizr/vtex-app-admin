@@ -7,6 +7,6 @@ export class Eshopper extends ExternalClient {
   }
 
   public getEshopper(url: string) {
-    return this.http.get(`/api/cliente?url=${url}`)
+    return this.http.get(`/api/cliente/${url}`)
   }
 }

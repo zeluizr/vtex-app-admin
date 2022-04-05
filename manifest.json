@@ -1,6 +1,6 @@
 {
-  "name": "eshopper",
-  "vendor": "tiendatest3",
+  "name": "app",
+  "vendor": "eshopper",
   "version": "0.0.2",
   "title": "Eshopper App",
   "description": "",
@@ -19,6 +19,25 @@
     "messages": "1.x",
     "docs": "0.x",
     "node": "6.x"
+  },
+  "billingOptions": {
+    "type": "billable",
+    "support": {
+      "email": "support@eshopper.global",
+      "url": "https://eshopper.global"
+    },
+    "availableCountries": [
+      "*"
+    ],
+    "plans": [
+      {
+        "id": "PlanBRL",
+        "currency": "BRL",
+        "price": {
+          "subscription": 100
+        }
+      }
+    ]
   },
   "policies": [
     {

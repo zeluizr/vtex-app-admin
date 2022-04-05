@@ -1,0 +1,23 @@
+{
+    "name": "Eshopper",
+    "headline": "Score Rankings",
+    "overview": "The Eshopper score is an all-in-one metric built from expert analysis of a site’s usability and shopper friendliness.",
+    "features": [
+        "Report",
+        "Lighthouse",
+        "WooRank",
+        "SimilarWeb"
+    ],
+    "additionalinformation": "The Eshopper score is an all-in-one metric built from expert analysis of a site’s usability and shopper friendliness.",
+    "video": "<https://www.youtube.com/embed/645ASYhJS-Q>",
+    "websiteURL": "<https://www.eshopper.global>",
+    "support": {
+        "email": "support@eshopper.global",
+        "url": "support.eshopper.global",
+        "phone": "+55 9 9399-0099"
+    },
+    "metricDescription": {
+        "track": "English description for metric track",
+        "notify": "English description for metric notify en-US"
+    }
+}
