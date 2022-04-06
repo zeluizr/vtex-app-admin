@@ -1,20 +1,21 @@
 {
     "name": "Eshopper",
     "headline": "Score Rankings",
-    "overview": "The Eshopper score is an all-in-one metric built from expert analysis of a site’s usability and shopper friendliness.",
+    "overview": "The ESHOPPER app monitors your user's purchase journey experience, generating valuable improvement recommendations to boost your results",
     "features": [
-        "Report",
-        "Lighthouse",
-        "WooRank",
-        "SimilarWeb"
+        "Reports of the main KPIs of your store",
+        "Analysis of your market data",
+        "Automated check for improvement points",
+        "Personalized website UX improvement recommendations",
+        "Integration with market reference tools"
     ],
-    "additionalinformation": "The Eshopper score is an all-in-one metric built from expert analysis of a site’s usability and shopper friendliness.",
-    "video": "<https://www.youtube.com/embed/645ASYhJS-Q>",
+    "additionalinformation": "ESHOPPER will generate periodic recommendations for your team to prioritize the improvements that most impact your results, putting your ecommerce ahead of the market",
+    "video": "",
     "websiteURL": "<https://www.eshopper.global>",
     "support": {
-        "email": "support@eshopper.global",
-        "url": "support.eshopper.global",
-        "phone": "+55 9 9399-0099"
+        "email": "contato@eshopper.global",
+        "url": "https://eshopper.global/",
+        "phone": "+55 21 99487-1420"
     },
     "metricDescription": {
         "track": "English description for metric track",
