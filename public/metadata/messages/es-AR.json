@@ -1,0 +1,24 @@
+{
+    "name": "Eshopper",
+    "headline": "Score Rankings",
+    "overview": "The ESHOPPER app monitors your user's purchase journey experience, generating valuable improvement recommendations to boost your results",
+    "features": [
+        "Reports of the main KPIs of your store",
+        "Analysis of your market data",
+        "Automated check for improvement points",
+        "Personalized website UX improvement recommendations",
+        "Integration with market reference tools"
+    ],
+    "additionalinformation": "ESHOPPER will generate periodic recommendations for your team to prioritize the improvements that most impact your results, putting your ecommerce ahead of the market",
+    "video": "",
+    "websiteURL": "<https://www.eshopper.global>",
+    "support": {
+        "email": "contato@eshopper.global",
+        "url": "https://eshopper.global/",
+        "phone": "+55 21 99487-1420"
+    },
+    "metricDescription": {
+        "track": "English description for metric track",
+        "notify": "English description for metric notify en-US"
+    }
+}
