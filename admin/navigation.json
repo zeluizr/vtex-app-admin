@@ -1,8 +1,8 @@
 {
   "section": "analytics",
-  "titleId": "admin-example.navigation.label-group",
+  "titleId": "eshopper-app.navigation.label-group",
   "subSection": "eshopper",
-  "searchKeyWordsHelpers": "admin-example.navigation.search.kws",
-  "labelId": "admin-example.navigation.label-table",
+  "searchKeyWordsHelpers": "eshopper-app.navigation.search.kws",
+  "labelId": "eshopper-app.navigation.label-table",
   "path": "/admin/eshopper"
 }

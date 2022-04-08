@@ -1,9 +1,5 @@
 {
-  "admin-example.navigation.label-group": "EShopper",
-  "admin-example.navigation.label-table": "Informe",
-  "admin-example.navigation.search.kws": "teste, mock, fake",
-  "admin-example.navigation.details.search.kws": "detalhe, mock, test, oi",
-  "admin-example.navigation.table.search.kws": "tabela, mock, test, tchau",
-  "admin-example.hello-world": "Eshopper"
-
+  "eshopper-app.navigation.label-group": "Eshopper",
+  "eshopper-app.navigation.label-table": "Report",
+  "eshopper-app.navigation.search.kws": "eshopper, report"
 }

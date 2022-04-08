@@ -10,14 +10,10 @@
         "Integration with market reference tools"
     ],
     "additionalInformation": "ESHOPPER will deliver periodic UX recommendations to boost your results.",
-    "websiteURL": "<https://www.eshopper.global>",
+    "websiteURL": "https://www.eshopper.global",
     "support": {
         "email": "contato@eshopper.global",
         "url": "https://eshopper.global",
         "phone": "+55 21 99487-1420"
-    },
-    "metricDescription": {
-        "track": "English description for metric track",
-        "notify": "English description for metric notify en-US"
     }
 }

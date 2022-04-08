@@ -18,7 +18,6 @@ const withAuthToken =
     }
 
 export class GetClientAccountHost extends IOClient {
-
   private VLM_BASE_URL: string
 
   public constructor(private ctx: IOContext, options?: InstanceOptions) {
