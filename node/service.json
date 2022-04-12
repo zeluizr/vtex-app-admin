@@ -13,6 +13,10 @@
     "accountclient": {
       "path": "/_v/clienteaccount",
       "public": true
+    },
+    "countimages": {
+      "path": "/_v/countimages",
+      "public": true
     }
   }
 }

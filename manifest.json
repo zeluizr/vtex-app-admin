@@ -1,7 +1,7 @@
 {
   "name": "app",
   "vendor": "eshopper",
-  "version": "1.0.15",
+  "version": "3.0.0",
   "title": "Eshopper App",
   "description": "",
   "mustUpdateAt": "2022-08-28",
@@ -34,7 +34,14 @@
         "id": "PlanBRL",
         "currency": "BRL",
         "price": {
-          "subscription": 100
+          "subscription": 375
+        }
+      },
+      {
+        "id": "PlanUSD",
+        "currency": "USD",
+        "price": {
+          "subscription": 75
         }
       }
     ]

@@ -2,6 +2,7 @@ import type { ClientsConfig, RecorderState, ServiceContext } from '@vtex/api'
 import { LRUCache, method, Service } from '@vtex/api'
 import { Clients } from './clients'
 import { accountClientMiddleware } from './middlewares/accountclient'
+import { countImageClientMiddleware } from './middlewares/countimages'
 import { eshopperMiddleware } from './middlewares/eshopper'
 
 
@@ -49,6 +50,9 @@ export default new Service({
     }),
     accountclient: method({
       GET: [accountClientMiddleware],
+    }),
+    countimages: method({
+      GET: [countImageClientMiddleware],
     })
   },
 })

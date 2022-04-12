@@ -23,6 +23,12 @@ export default function EshopperApp() {
         "/_v/clienteaccount"
       ).then(res => res.json());
 
+      const countimages = await fetch(
+        "/_v/countimages"
+      ).then(res => res.json());
+
+      console.log(countimages);
+
       const { hosts } = account;
       const [host] = hosts;
 
