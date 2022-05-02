@@ -1,5 +1,5 @@
 {
-  "admin.eshopper-app.navigation.label-group": "Eshopper",
-  "admin.eshopper-app.navigation.label-table": "Report",
-  "admin.eshopper-app.navigation.search.kws": "eshopper, report"
+  "admin/eshopper-app.navigation.label-group": "Eshopper",
+  "admin/eshopper-app.navigation.label-table": "Report",
+  "admin/eshopper-app.navigation.search.kws": "eshopper, report"
 }
